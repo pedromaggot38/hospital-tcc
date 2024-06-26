@@ -1,6 +1,11 @@
+import Header from "@/components/Header";
+import NewsItem from "@/components/NewsItem";
 
 export default function Home() {
   return (
-    <div><h2>Inicial</h2></div>
+    <div>
+      <Header />
+      <NewsItem />
+    </div>
   );
 }
