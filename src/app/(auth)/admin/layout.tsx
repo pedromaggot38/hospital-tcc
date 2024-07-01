@@ -4,8 +4,6 @@ import './globals.css';
 import { Sidebar } from './adminComponents/sidebar';
 import { ThemeProvider } from "./adminComponents/theme-provider";
 import * as React from "react"
-import { Suspense } from 'react';
-
 
 const inter = Inter({ subsets: ['latin'] });
 

@@ -15,9 +15,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isAdmin = false;
+
   return (
     <html lang="en">
       <body className={inter.className}>
+        {isAdmin && <Header />}
         {children}
       </body>
     </html>
