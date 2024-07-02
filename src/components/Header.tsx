@@ -4,7 +4,6 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,7 +16,7 @@ const Header = () => {
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
-            <a className="block text-teal-600" href="#">
+            <a className="block text-teal-600" href="/">
               <span className="sr-only">Home</span>
               <Image src={assets.logo} alt="logo" width={60} height={60} />
             </a>
@@ -27,22 +26,22 @@ const Header = () => {
             <nav aria-label="Global" className={`hidden md:block ${isMenuOpen ? 'block' : ''}`}>
               <ul className="flex items-center gap-6 text-sm">
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="/about">Sobre</a>
+                  <a className="text-gray-500 transition hover:text-blue-600" href="/about">Sobre</a>
                 </li>
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Careers</a>
+                  <a className="text-gray-500 transition hover:text-blue-600" href="#">Careers</a>
                 </li>
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">History</a>
+                  <a className="text-gray-500 transition hover:text-blue-600" href="#">History</a>
                 </li>
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Services</a>
+                  <a className="text-gray-500 transition hover:text-blue-600" href="#">Services</a>
                 </li>
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Projects</a>
+                  <a className="text-gray-500 transition hover:text-blue-600" href="#">Projects</a>
                 </li>
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Blog</a>
+                  <a className="text-gray-500 transition hover:text-blue-600" href="#">Blog</a>
                 </li>
               </ul>
             </nav>
@@ -50,15 +49,15 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <div className="sm:flex sm:gap-4">
                 <a
-                  className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                  href="#"
+                  className="rounded-md bg-blue-600 px-5 py-2.5 text-sm font-medium text-black hover:text-white shadow"
+                  href="/admin"
                 >
                   Login
                 </a>
 
                 <div className="hidden sm:flex">
                   <a
-                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-blue-600"
                     href="#"
                   >
                     Register
