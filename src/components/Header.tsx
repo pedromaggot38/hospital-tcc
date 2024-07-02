@@ -1,9 +1,17 @@
+'use client'
+
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { assets } from '../assets/assets'
-import Link from 'next/link'
-import { Link2Icon } from 'lucide-react'
+
+
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
   return (
     <header className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -16,30 +24,25 @@ const Header = () => {
           </div>
 
           <div className="md:flex md:items-center md:gap-12">
-            <nav aria-label="Global" className="hidden md:block">
+            <nav aria-label="Global" className={`hidden md:block ${isMenuOpen ? 'block' : ''}`}>
               <ul className="flex items-center gap-6 text-sm">
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="/about"> Sobre </a>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="/about">Sobre</a>
                 </li>
-
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Careers </a>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Careers</a>
                 </li>
-
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> History </a>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">History</a>
                 </li>
-
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Services </a>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Services</a>
                 </li>
-
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Projects </a>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Projects</a>
                 </li>
-
                 <li>
-                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Blog </a>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Blog</a>
                 </li>
               </ul>
             </nav>
@@ -64,7 +67,10 @@ const Header = () => {
               </div>
 
               <div className="block md:hidden">
-                <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                <button 
+                  className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75" 
+                  onClick={toggleMenu}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
@@ -80,9 +86,37 @@ const Header = () => {
             </div>
           </div>
         </div>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <nav aria-label="Global">
+              <ul className="flex flex-col items-center gap-4 text-sm">
+                <li>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="/about">Sobre</a>
+                </li>
+                <li>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Careers</a>
+                </li>
+                <li>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">History</a>
+                </li>
+                <li>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Services</a>
+                </li>
+                <li>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Projects</a>
+                </li>
+                <li>
+                  <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Blog</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   )
 }
 
-export default Header
+export default Header;
