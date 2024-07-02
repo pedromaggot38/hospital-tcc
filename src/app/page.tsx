@@ -1,10 +1,10 @@
-import Header from "@/components/Header";
-import NewsItem from "@/components/NewsItem";
+import MainLayout from "@/templates/MainLayout";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div>
-
-    </div>
+    <MainLayout>
+      <h1>Welcome to Hospital Maracaí</h1>
+      {/* Conteúdo da página */}
+    </MainLayout>
   );
 }
