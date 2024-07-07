@@ -29,7 +29,7 @@ export function ThemeSwitch() {
             Escuro
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => setTheme("system")}>
-            Systema
+            Sistema
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
